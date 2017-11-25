@@ -1,24 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="FullContact" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullContact API" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQV-zf-wwl">
+                                <rect key="frame" x="114" y="40" width="147" height="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter an email address to find out what the web knows about that person!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUW-hB-hOQ">
+                                <rect key="frame" x="19" y="95" width="337.5" height="40"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email..." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N96-VR-R8t">
+                                <rect key="frame" x="19" y="175" width="337.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="OLA-bH-9pK"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nr0-65-guR">
+                                <rect key="frame" x="140" y="220" width="94" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Check email">
+                                    <color key="titleColor" red="0.22673895960000001" green="0.17634806040000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkEmailBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LRW-yN-okr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DUW-hB-hOQ" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.9" id="7xJ-fR-Ubn"/>
+                            <constraint firstItem="DUW-hB-hOQ" firstAttribute="top" secondItem="MQV-zf-wwl" secondAttribute="bottom" constant="30" id="CEb-bt-3vY"/>
+                            <constraint firstItem="MQV-zf-wwl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Gqm-vd-87W"/>
+                            <constraint firstItem="nr0-65-guR" firstAttribute="top" secondItem="N96-VR-R8t" secondAttribute="bottom" constant="15" id="JpE-Fd-uDE"/>
+                            <constraint firstItem="nr0-65-guR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZKK-Hq-YG0"/>
+                            <constraint firstItem="N96-VR-R8t" firstAttribute="top" secondItem="DUW-hB-hOQ" secondAttribute="bottom" constant="40" id="ghG-bl-pAB"/>
+                            <constraint firstItem="DUW-hB-hOQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i31-dw-U79"/>
+                            <constraint firstItem="N96-VR-R8t" firstAttribute="width" secondItem="DUW-hB-hOQ" secondAttribute="width" id="leh-Pz-3nZ"/>
+                            <constraint firstItem="MQV-zf-wwl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nNK-QK-B6J"/>
+                            <constraint firstItem="N96-VR-R8t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wve-Rf-Fka"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="checkEmailBtn" destination="nr0-65-guR" id="Zqj-L4-thm"/>
+                        <outlet property="emailTxtField" destination="N96-VR-R8t" id="lQo-eM-Y2E"/>
+                        <segue destination="RWT-1L-9ob" kind="show" identifier="toResults" id="nC1-mG-D9x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+        </scene>
+        <!--ResultsVC-->
+        <scene sceneID="mzy-0F-sCZ">
+            <objects>
+                <viewController id="RWT-1L-9ob" customClass="ResultsVC" customModule="FullContact" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g2H-78-jN0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F69-4Y-604">
+                                <rect key="frame" x="10" y="30" width="54" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" red="0.22673895960000001" green="0.17634806040000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="RWT-1L-9ob" eventType="touchUpInside" id="n3f-Bh-igA"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oq9-0R-vew">
+                                <rect key="frame" x="137" y="70" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="CQ6-Df-Ags"/>
+                                    <constraint firstAttribute="height" constant="100" id="hZr-iG-uNE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLh-3G-Lbt">
+                                <rect key="frame" x="178.5" y="182" width="18.5" height="26.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="0.22673895960000001" green="0.17634806040000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUb-N7-2Hx">
+                                <rect key="frame" x="10" y="218.5" width="355" height="438.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qn5-bq-N84" firstAttribute="trailing" secondItem="vUb-N7-2Hx" secondAttribute="trailing" constant="10" id="0ng-u5-wRp"/>
+                            <constraint firstItem="F69-4Y-604" firstAttribute="leading" secondItem="qn5-bq-N84" secondAttribute="leading" constant="10" id="4Tz-Im-kbd"/>
+                            <constraint firstItem="Oq9-0R-vew" firstAttribute="top" secondItem="qn5-bq-N84" secondAttribute="top" constant="50" id="56A-u7-NL3"/>
+                            <constraint firstItem="vUb-N7-2Hx" firstAttribute="leading" secondItem="qn5-bq-N84" secondAttribute="leading" constant="10" id="C4h-cL-1Ny"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F69-4Y-604" secondAttribute="trailing" constant="20" symbolic="YES" id="DCT-kV-igY"/>
+                            <constraint firstItem="Oq9-0R-vew" firstAttribute="centerX" secondItem="g2H-78-jN0" secondAttribute="centerX" id="UB7-0c-UN7"/>
+                            <constraint firstItem="pLh-3G-Lbt" firstAttribute="centerX" secondItem="g2H-78-jN0" secondAttribute="centerX" id="c9N-af-2ir"/>
+                            <constraint firstItem="qn5-bq-N84" firstAttribute="bottom" secondItem="vUb-N7-2Hx" secondAttribute="bottom" constant="10" id="dol-Q8-KGj"/>
+                            <constraint firstItem="F69-4Y-604" firstAttribute="top" secondItem="g2H-78-jN0" secondAttribute="topMargin" constant="10" id="kb9-ag-Bro"/>
+                            <constraint firstItem="pLh-3G-Lbt" firstAttribute="top" secondItem="Oq9-0R-vew" secondAttribute="bottom" constant="12" id="p40-t8-RcI"/>
+                            <constraint firstItem="vUb-N7-2Hx" firstAttribute="top" secondItem="pLh-3G-Lbt" secondAttribute="bottom" constant="10" id="rXJ-ZP-pEr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qn5-bq-N84"/>
+                    </view>
+                    <connections>
+                        <outlet property="personImage" destination="Oq9-0R-vew" id="dDp-36-quD"/>
+                        <outlet property="personNameLbl" destination="pLh-3G-Lbt" id="Qil-Td-hlu"/>
+                        <outlet property="personTextField" destination="vUb-N7-2Hx" id="y7w-Ud-jcb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bsp-m9-cF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1277.5999999999999" y="33.733133433283363"/>
         </scene>
     </scenes>
 </document>
